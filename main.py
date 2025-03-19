@@ -1,3 +1,3 @@
-"""Module providing a function printing python version."""
+"""hello"""
 
 print('Hello')
