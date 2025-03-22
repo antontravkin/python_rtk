@@ -133,8 +133,6 @@ except Exception as e:
             print(1/i)
         except ZeroDivisionError as e:
             print(0)
-
-
 f= None
 try:
     f = open('test.txt', 'r')
