@@ -1,13 +1,10 @@
 """Создание файлов и папок"""
 
 import openpyxl
-from openpyxl import Workbook
 import shutil
 import os
 from pathlib import Path
 import locale
-
-# Устанавливаем русскую локаль
 locale.setlocale(locale.LC_TIME, "ru_RU.UTF-8")
 parent_dir = Path("w")  
 workbook = openpyxl.load_workbook("w/Заявки ВОЛС 2022 - 2025.xlsx")
@@ -40,9 +37,9 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         # Копируем и переименовываем файл
         shutil.copy2(source_file, destination_file)
         # Открываем файл для редактирования
-        wb = openpyxl.load_workbook(destination_file)
+        wb = openpyxl.load_workbook(destination_file) 
         # Выбираем нужный лист (например, "ВедомостьВР")
-        sheet_name = "ВедомостьВР" 
+        sheet_name = "ВедомостьВР"# Название листа
         sheet_name_akt = "11Акт"# Название листа
         sheet_name_dr = "Акт ДР"# Название листа
         if sheet_name in wb.sheetnames:
@@ -51,6 +48,8 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
             ws_dr = wb[sheet_name_dr]
         else:
             print(f"Ошибка: Лист '{sheet_name}' не найден. Доступные листы: {wb.sheetnames}")
+            print(f"Ошибка: Лист '{sheet_name_akt}' не найден. Доступные листы: {wb.sheetnames}")
+            print(f"Ошибка: Лист '{sheet_name_dr}' не найден. Доступные листы: {wb.sheetnames}")
             wb.close()
             exit()       
         # Вносим изменения 
@@ -60,7 +59,7 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         for tg in tg.iter_rows(min_row=1, max_row=tg.max_row, min_col=1, max_col=tg.max_column):     
             if (str(tg[0].value) == str(number)):
                 ws["D45"] = tg[11].value * 2
-        workbook_tg.close()  
+            workbook_tg.close()  
         ws_akt["B2"] = " от " + date_full
         ws_akt["B7"] = f"1. {date} г. Исполнитель оказал, а Заказчик принял работы по договору № РТК-ВОЛС-24-26 от 15.03.2024 г., а именно:"
         ws_dr["E4"] = ws_dr["D15"] = ws_dr["D17"] = date_full
@@ -68,6 +67,7 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         # Сохраняем файл
         wb.save(destination_file)
         wb.close()
+
     """ВПК гор"""
     if (operator == 'ВПК гор'):
         # Исходный файл и путь назначения
@@ -84,9 +84,9 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         # Открываем файл для редактирования
         wb = openpyxl.load_workbook(destination_file)
         # Выбираем нужный лист (например, "ВедомостьВР")
-        sheet_name = "ВедомостьВР" 
+        
+        sheet_name = "ВедомостьВР"# Название листа
         sheet_name_akt = "1 Акт"# Название листа
-        sheet_name_dr = "Акт ДР"# Название листа
         if sheet_name in wb.sheetnames:
             ws = wb[sheet_name]
         else:
@@ -104,4 +104,5 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         # Сохраняем файл
         wb.save(destination_file)
         wb.close()
+        
 workbook.close()
