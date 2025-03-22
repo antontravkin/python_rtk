@@ -43,3 +43,5 @@ while True:
             print("Число меньше.")
     except ValueError:
       print("Ошибка ввода! Введите целое число.")
+
+
