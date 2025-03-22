@@ -1,4 +1,8 @@
 """Конспект 17.10.2024"""
-#Функции
 
-print(0)
+#Функции
+import os
+def hour_to_sec (hour, min, sec): 
+    return hour * 60 * 60 + min * 60 + sec
+
+print(hour_to_sec (0, 5, 50))
