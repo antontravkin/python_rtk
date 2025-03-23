@@ -23,7 +23,7 @@ for i in range(1, 2):
         print(350)
         
 for i in range(1, 6):
-    print('Итерация № ' +str(i)) 
+    print('Итерация № '+str(i)) 
 
 colors = ['красный','сини','зеленый','желты','черный',]
 print(colors)
@@ -35,7 +35,7 @@ for i, color in enumerate(colors):
 
 print('-------') 
 x, y = 6,7
-print(str(x) +' '+ str(y))
+print(str(x)+' '+str(y))
 
 dates = ['2000','2010','2032','2005','2080']
 i = 0
@@ -50,7 +50,7 @@ while(count <= 100):
     print(count)
     if(count > 15):
         break #continue #pass
-    count+=1
+    count += 1
 print('Конец программы')
 
 for i in range(x):
