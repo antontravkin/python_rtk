@@ -1,9 +1,11 @@
 """PEP8"""
 
-from hmac import new
+
 import os
-from random import randint
 import sys
+
+from random import randint
+from hmac import new
 
 
 class Application(object):

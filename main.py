@@ -1,14 +1,20 @@
 """Создание файлов и папок"""
 
+
+import os
+
 import openpyxl
 import shutil
-import os
-from pathlib import Path
 import locale
+
+from pathlib import Path
+
 locale.setlocale(locale.LC_TIME, "ru_RU.UTF-8")
 parent_dir = Path("w")  
 workbook = openpyxl.load_workbook("w/Заявки ВОЛС 2022 - 2025.xlsx")
 sheet = workbook["2025"] 
+
+
 # Проходим по всем строкам и столбцам
 for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_column):  
     number = row[0].value  
