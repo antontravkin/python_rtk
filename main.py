@@ -65,6 +65,7 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
                 f"Ошибка: Лист '{sheet_name_dr}' не найден. Доступные листы: {wb.sheetnames}")
             wb.close()
             exit()
+
         # Вносим изменения
         ws["C10"] = str(row[2].value) + " от " + date
         workbook_tg = openpyxl.load_workbook("w/list.xlsx")
@@ -77,6 +78,7 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         ws_akt["B7"] = f"1. {date} г. Исполнитель оказал, а Заказчик принял работы по договору № РТК-ВОЛС-24-26 от 15.03.2024 г., а именно:"
         ws_dr["E4"] = ws_dr["D15"] = ws_dr["D17"] = date_full
         ws_dr["E15"] = time
+
         # Сохраняем файл
         wb.save(destination_file)
         wb.close()
@@ -97,7 +99,6 @@ for row in sheet.iter_rows(min_row=45, max_row=56, min_col=1, max_col=sheet.max_
         # Открываем файл для редактирования
         wb = openpyxl.load_workbook(destination_file)
         # Выбираем нужный лист (например, "ВедомостьВР")
-
         sheet_name = "ВедомостьВР"  # Название листа
         sheet_name_akt = "1 Акт"  # Название листа
         if sheet_name in wb.sheetnames:
