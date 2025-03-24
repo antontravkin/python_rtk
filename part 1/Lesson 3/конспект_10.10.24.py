@@ -9,3 +9,8 @@ def hour_to_sec(hour, min, sec):
 
 
 print(hour_to_sec(0, 5, 50))
+
+account = {'username': 'azatyakupov', 'online': True, 'friends': 400,
+           'username': 'azatyakupov', 'online': True, 'friends': 400,
+           'username': 'azatyakupov', 'online': True, 'friends': 400}
+print(account.key())
