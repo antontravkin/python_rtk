@@ -22,3 +22,18 @@ account1 = {'username': 'user1',
             'friend': 0 }
 
 print(account1)
+
+account2 = {'username': 'user1',
+            'username': 'user',
+            'online': False,
+            'points' : 723}
+
+print(account2)
+
+print(account2.items())
+
+for key, value in account2.items():
+    print(key, value)
+account2 ['points'] = 345
+account2 ['username'] = 'Anton'
+print(account2) 
