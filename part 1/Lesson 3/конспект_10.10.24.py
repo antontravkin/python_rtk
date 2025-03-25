@@ -13,6 +13,12 @@ print(hour_to_sec(0, 5, 50))
 account = {'username': 'azatyakupov', 'online': True, 'friends': 400,
            'username': 'azatyakupov', 'online': True, 'friends': 400,
            'username': 'azatyakupov', 'online': True, 'friends': 400}
-print(account)
+print(account['username'])
 
 print('test')
+
+account1 = {'username': 'user1',
+            'online': False,
+            'friend': 0 }
+
+print(account1)
