@@ -1,12 +1,11 @@
 """Создание файлов и папок"""
 
 
-import os
-import openpyxl
 import shutil
 import locale
 import warnings
 
+import openpyxl
 
 from pathlib import Path
 
@@ -43,8 +42,8 @@ def copy_and_edit_file(template_path, destination_folder, folder_name, replaceme
             for cell, value in updates.items():
                 ws[cell] = value
         else:
-            print(
-                f"Ошибка: Лист '{sheet_name}' не найден. Доступные листы: {wb.sheetnames}")
+            """ print(
+                f"Ошибка: Лист '{sheet_name}' не найден. Доступные листы: {wb.sheetnames}") """
             wb.close()
             return
     wb.save(destination_file)
