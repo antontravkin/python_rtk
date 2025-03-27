@@ -5,8 +5,14 @@ import os
 import openpyxl
 import shutil
 import locale
+import warnings
+
 
 from pathlib import Path
+
+
+warnings.filterwarnings("ignore", category=UserWarning,
+                        message=".*wmf image format.*")
 
 # Устанавливаем локаль
 locale.setlocale(locale.LC_TIME, "ru_RU.UTF-8")

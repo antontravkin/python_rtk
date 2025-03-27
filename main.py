@@ -6,8 +6,12 @@ import os
 import openpyxl
 import shutil
 import locale
+import warnings
 
 from pathlib import Path
+
+
+warnings.simplefilter("ignore", UserWarning)
 
 
 locale.setlocale(locale.LC_TIME, "ru_RU.UTF-8")
