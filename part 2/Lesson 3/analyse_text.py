@@ -1,4 +1,4 @@
-def analyze_text(text):
+def analyse_text(text):
     # Приводим текст к нижнему регистру и разбиваем на слова
     words = text.lower().split()
 
