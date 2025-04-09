@@ -1,7 +1,3 @@
 .vscode/
-w/
 .DS_Store
-main.py
 .venv
-telegram_rtk.py
-test.py
