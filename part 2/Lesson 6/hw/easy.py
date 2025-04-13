@@ -19,6 +19,7 @@ cursor_an_name.close()
 cursor_name.close()
 conn.close()
 
+
 # Чтение данных из Excel (лист easy)
 df = pd.read_excel("medicine.xlsx", sheet_name="easy")
 df.columns = ['patient_id', 'test_code', 'value']
